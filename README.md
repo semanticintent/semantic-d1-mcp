@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/semanticintent-semantic-d1-mcp-badge.png)](https://mseep.ai/app/semanticintent-semantic-d1-mcp)
+
 # Semantic D1 MCP
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
