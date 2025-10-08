@@ -9,6 +9,10 @@ updates:
     labels:
       - "dependencies"
       - "automated"
+    ignore:
+      # Ignore dotenv updates - version 17.x breaks MCP stdio with banner output
+      - dependency-name: "dotenv"
+        update-types: ["version-update:semver-major", "version-update:semver-minor"]
 
   # Keep GitHub Actions up to date
   - package-ecosystem: "github-actions"
