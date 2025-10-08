@@ -47,7 +47,7 @@
     "prepublishOnly": "npm run build && npm test"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.17.1",
+    "@modelcontextprotocol/sdk": "^1.19.1",
     "dotenv": "16.4.5"
   },
   "devDependencies": {
