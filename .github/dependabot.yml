@@ -1,11 +1,14 @@
+# Dormant repo: security updates only.
+# A zero PR limit stops routine version-update PRs; Dependabot security
+# updates still open PRs when a vulnerable dependency has a fix.
 version: 2
 updates:
   # Enable version updates for npm
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "weekly"
-    open-pull-requests-limit: 10
+      interval: "monthly"
+    open-pull-requests-limit: 0
     labels:
       - "dependencies"
       - "automated"
@@ -18,7 +21,8 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
+    open-pull-requests-limit: 0
     labels:
       - "ci"
       - "dependencies"
