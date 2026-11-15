@@ -1,4 +1,8 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.D1DatabaseMCPServer = void 0;
+const node_fs_1 = require("node:fs");
+const node_path_1 = require("node:path");
 /**
  * MCPServer.ts
  *
@@ -20,12 +24,12 @@
  * - Tool design based on user intent, not technical constraints
  * - Error messages convey semantic meaning
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.D1DatabaseMCPServer = void 0;
 const index_js_1 = require("@modelcontextprotocol/sdk/server/index.js");
 const stdio_js_1 = require("@modelcontextprotocol/sdk/server/stdio.js");
 const types_js_1 = require("@modelcontextprotocol/sdk/types.js");
 const Environment_js_1 = require("../../domain/value-objects/Environment.js");
+// Reported to MCP clients; read from package.json so it cannot drift (3 levels up from src/ or dist/).
+const PACKAGE_VERSION = JSON.parse((0, node_fs_1.readFileSync)((0, node_path_1.join)(__dirname, '..', '..', '..', 'package.json'), 'utf-8')).version;
 /**
  * MCP Server for D1 Database introspection
  *
@@ -45,7 +49,7 @@ class D1DatabaseMCPServer {
         this.suggestOptimizationsUseCase = suggestOptimizationsUseCase;
         this.server = new index_js_1.Server({
             name: 'semantic-d1-mcp',
-            version: '1.0.0',
+            version: PACKAGE_VERSION,
         }, {
             capabilities: {
                 tools: {},
